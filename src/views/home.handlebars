@@ -1,0 +1,17 @@
+<main>
+    <h1>Simple Chat</h1>
+
+    <!-- Form to send messages -->
+    <form id="message-form">
+        <input type="text" id="message-input" placeholder="Type a message" required />
+        <button type="submit">Send</button>
+    </form>
+
+    <!-- Area where chat messages will be displayed -->
+    <div id="messages"></div>
+</main>
+
+<!-- Script to establish WebSocket connection with the server -->
+<script src="/socket.io/socket.io.js"></script>
+<!-- Script to handle chat message logic and interaction -->
+<script src="/js/chat.js"></script>

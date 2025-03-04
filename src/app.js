@@ -35,10 +35,17 @@ const httpServer = app.listen(8080, () => {
 // Setting up WebSocket server with Socket.io
 const io = new Server(httpServer);
 
-// Listening for WebSocket connections
+// When a user connects, set up events for handling messages
 io.on('connection', (socket) => {
-    console.log('User connected'); // Log when a user connects
+    console.log('User connected');
+
+    // Handle incoming messages from the client
+    socket.on('send_message', (message) => {
+        // Broadcast the message to all connected clients
+        io.emit('receive_message', message);
+    });
+
     socket.on('disconnect', () => {
-        console.log('User disconnected'); // Log when a user disconnects
+        console.log('User disconnected');
     });
 });
