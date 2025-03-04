@@ -1,0 +1,18 @@
+# Node dependencies
+node_modules/
+
+# Local environment configuration files
+.env
+
+# Log files
+*.log
+
+# Build output files
+/dist
+/build
+
+# Other system or editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,27 @@
+{
+    "name": "simple-chat",
+    "version": "1.0.0",
+    "description": "A simple real-time chat application using Node.js, Express, WebSockets, Handlebars and Bootstrap.",
+    "main": "src/app.js",
+    "scripts": {
+        "start": "nodemon src/app.js"
+    },
+    "keywords": [
+        "chat",
+        "real-time",
+        "websockets",
+        "node",
+        "express",
+        "handlebars",
+        "bootstrap"
+    ],
+    "author": "Federico Gil de Muro",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+        "bootstrap": "^5.3.3",
+        "express": "^4.21.2",
+        "express-handlebars": "^8.0.1",
+        "socket.io": "^4.8.1"
+    }
+}
