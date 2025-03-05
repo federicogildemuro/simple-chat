@@ -53,7 +53,7 @@ npm install
 To run the development server, use the following command:
 
 ```bash
-npm start
+npm run dev
 ```
 
 This will start the app on [http://localhost:8080](http://localhost:8080).
