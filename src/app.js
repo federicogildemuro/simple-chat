@@ -26,9 +26,9 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-// Starting the server on port 8080
-const httpServer = app.listen(8080, () => {
-    console.log('Server is running on port 8080');
+// Starting the server on the port provided by the environment or defaulting to 8080
+const httpServer = app.listen(process.env.PORT || 8080, () => {
+    console.log(`Server is running on port ${process.env.PORT || 8080}`);
 });
 
 // Setting up WebSocket server with Socket.io
