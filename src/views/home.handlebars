@@ -1,18 +1,19 @@
-<main id="main-content">
-    <h1>Simple Chat</h1>
+<main id="main-content" class="container-fluid bg-dark text-light p-5">
+    <h1 class="fw-bold text-center mb-5">Simple Chat</h1>
 
-    <!-- Form to send a new message -->
-    <form id="message-form">
-        <input type="text" id="message-input" placeholder="Type a message" />
-        <button type="submit">Send</button>
+    <!-- Chat container to display messages -->
+    <div id="chat" class="chat-container border border-primary rounded p-3 mb-5"></div>
+
+    <!-- Form to send messages -->
+    <form id="message-form" class="mb-5">
+        <div class="input-group">
+            <input type="text" id="message-input" class="form-control" placeholder="Type a message" />
+            <button type="submit" class="btn btn-primary">Send</button>
+        </div>
     </form>
 
-    <!-- Container where chat messages will be displayed -->
-    <h2>Chat</h2>
-    <div id="chat"></div>
-
-    <!-- List of users currently online -->
-    <h2>Online Users</h2>
+    <!-- Online users list -->
+    <h2 class"fw-bold text-center mb-5">Online Users</h2>
     <ul id="online-users"></ul>
 </main>
 

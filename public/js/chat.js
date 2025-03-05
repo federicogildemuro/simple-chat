@@ -11,9 +11,14 @@ let isUserSet = false;
 // Prompt the user to enter their name when joining the chat
 if (!isUserSet) {
     Swal.fire({
-        title: 'Welcome to Simple Chat!',
+        title: 'Welcome to Simple Chat',
         text: 'Please enter your name',
         input: 'text',
+        customClass: {
+            popup: 'bg-dark text-light px-5',
+            input: 'form-control mx-auto',
+            confirmButton: 'btn btn-primary',
+        },
         showCancelButton: false,
         confirmButtonText: 'Join',
         allowOutsideClick: false,
@@ -32,6 +37,7 @@ if (!isUserSet) {
 // Enable chat UI when the user is accepted
 socket.on('userAccepted', () => {
     mainContent.style.display = 'block';
+    document.querySelector('#message-input').focus();
     isUserSet = true;
 });
 
@@ -41,6 +47,10 @@ socket.on('userExists', (errorMessage) => {
         icon: 'error',
         title: 'Oops...',
         text: errorMessage,
+        customClass: {
+            popup: 'bg-dark text-light px-5',
+            confirmButton: 'btn btn-primary',
+        },
     }).then(() => {
         location.reload();
     });
@@ -53,6 +63,9 @@ socket.on('userJoin', (user) => {
             text: `${user} has joined the chat`,
             toast: true,
             position: 'top-end',
+            customClass: {
+                popup: 'bg-primary text-light',
+            },
             showConfirmButton: false,
             timer: 5000,
         });
@@ -87,8 +100,10 @@ messageForm.addEventListener('submit', (e) => {
 socket.on('showNewMessage', (message) => {
     const chat = document.querySelector('#chat');
     const messageElement = document.createElement('p');
+    messageElement.className = 'mb-0';
     messageElement.textContent = message;
     chat.appendChild(messageElement);
+    chat.scrollTop = chat.scrollHeight;
 });
 
 // Notify when a user leaves the chat
@@ -98,6 +113,9 @@ socket.on('userLeft', (user) => {
             text: `${user} has left the chat`,
             toast: true,
             position: 'top-end',
+            customClass: {
+                popup: 'bg-primary text-light',
+            },
             showConfirmButton: false,
             timer: 5000,
         });
