@@ -1,17 +1,24 @@
-<main>
+<main id="main-content">
     <h1>Simple Chat</h1>
 
-    <!-- Form to send messages -->
+    <!-- Form to send a new message -->
     <form id="message-form">
-        <input type="text" id="message-input" placeholder="Type a message" required />
+        <input type="text" id="message-input" placeholder="Type a message" />
         <button type="submit">Send</button>
     </form>
 
-    <!-- Area where chat messages will be displayed -->
-    <div id="messages"></div>
+    <!-- Container where chat messages will be displayed -->
+    <h2>Chat</h2>
+    <div id="chat"></div>
+
+    <!-- List of users currently online -->
+    <h2>Online Users</h2>
+    <ul id="online-users"></ul>
 </main>
 
-<!-- Script to establish WebSocket connection with the server -->
+<!-- Socket.io library to establish WebSocket connection with the server -->
 <script src="/socket.io/socket.io.js"></script>
-<!-- Script to handle chat message logic and interaction -->
+<!-- SweetAlert2 library for interactive alert messages -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Custom script to handle chat functionality and user interactions -->
 <script src="/js/chat.js"></script>
